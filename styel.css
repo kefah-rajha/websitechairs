@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+:root {
+  --maincolor: rgb(170, 28, 28);
+}
+
+header {
+  background-color:rgb(204, 204, 204) ;
+  color: rgb(22, 22, 22);
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+.logo {
+  flex: 2;
+  height: 80px;
+  display: flex;
+align-items: center;}
+.logo img {
+transform: translate(0,-15%);
+margin-left: 3%;
+}
+nav {
+  flex-grow: 3;
+
+  
+}
+nav ul  {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+
+}
+nav ul li {
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  padding: 4px;
+
+
+}
+
+nav ul li::before{
+  content:  "";
+  position: absolute;
+  border-width: 0 2px;
+  border-style: solid;
+  color: var(--maincolor);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scale(0,0);
+  transition: 0.3s;
+}
+nav ul li:hover::before{
+  transform: scale(1,1);
+
+
+}
+nav ul li::after{
+  content:  "";
+  position: absolute;
+  border-width: 2px 0;
+  border-style: solid;
+  color: var(--maincolor);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scale3d(0,1,1);
+  transition: 0.6s;
+}
+nav ul li:hover::after{
+  transform: scale3d(1,1,1);
+
+
+
+}
+nav ul li .tabel {
+position: absolute;
+display: flex;
+background-color:rgb(212, 211, 211) ;
+flex-direction: column;
+padding: 15px;
+top: 46px;
+left: -21px;
+border: 1px solid var(--maincolor);
+transition: .4s;
+transform: scale3d(0,1,1);
+visibility: hidden;
+opacity: 0;
+}
+nav ul li .tabel li {
+  font-weight: normal;
+  display: block;
+}
+nav ul li .tabel li:first-child{
+  font-weight: bold;
+}
+nav ul li:first-child:hover .tabel {
+  transform: scale3d(1,1,1);
+  visibility: visible;
+  opacity: 1;
+
+}
+.mymark{
+  flex: 2;
+  
+
+}
+.mymark ul  {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0 0 0 30%;
+}
+.mymark ul li i{
+font-size: 20px;
+position: relative;
+}
+.mymark ul li:nth-child(2)::after{
+  content: "0";
+  position: absolute;
+  top: 28px;
+  right: 184px;
+  border-radius: 50%;
+  color: white;
+  line-height: 16px;
+  font-size: 11px;
+  color: red;
+  background-color: white;
+
+}
+.photo-hero {
+  max-width:  100%;
+}
+.photo-hero img {
+  width: 100%;
+}
+/*special category*/
+.special-category {
+  margin: 40px;
+}
+.special-category h1 {
+  text-align:center;
+  font-weight: bold;
+  position: relative;
+cursor: pointer;
+}
+.special-category h1::before{
+  content:  " ";
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background-color: var(--maincolor);
+  top: 60px;
+  left: 451px;
+  transform: scale(1,1);
+  transition: .5s;
+  
+}
+.special-category h1:hover::before{
+  transform: scale(2,2);
+  height: 1px;
+
+
+}
+.special-category .items{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap :10px
+  
+}
+.special-category .items .item {
+  margin: 30px  0 ;
+}
+.special-category .items .item img {
+  width: 100%;
+}
+.special-category .items .item h5{
+color: rgb(143, 143, 143);
+font-size: 15px;
+padding: 8px 0 0 0;
+
+}
+.special-category .items .item h4 {
+  color: var(--maincolor);
+  font-size: 20px;
+}
+.special-category .items .item  i {
+  background-color: crimson;
+  padding: 5px;
+  display: block;
+  text-align: center;
+  transform: scaleX(0);
+  transition: .7s ;
+}
+.special-category .items .item:hover i{
+  transform: scaleX(1);
+
+
+}
+/*penlope*/
+.penlope {
+  display: flex;
+margin: 40px;
+}
+.marketing{
+  flex: 2;
+  background-color: rgb(219, 219, 219);
+  margin-right: 10px;
+  padding: 20px 10px 10px 10px;
+  position: relative;
+}
+.marketing .pen {
+  margin-left: 60px ;
+  margin-bottom: 10px;
+}
+.marketing .pen  h3 {
+  margin: 0;
+
+}
+.marketing i {
+  position: absolute;
+}
+.marketing .point {
+  display: flex;
+justify-content: center;
+margin-top: 30px;
+}
+.marketing .point span {
+  width: 65px;
+  height: 2px;
+  background-color :rgb(119, 119, 119);
+  margin: 3px;
+  
+}
+.marketing .point span:first-child{
+  background-color: brown;
+}
+.discount{
+  flex: 1;
+  position: relative;
+}
+.discount img {
+  max-width: 97%;
+}
+.discount .p-discount{
+position: absolute;
+top:0;
+left: 5px;
+}
+.discount .p-discount p{
+  color: #000;
+}
+/*free delivery*/
+.delivery-shopping {
+  display: flex;
+  margin: 50px;
+
+}
+.delivery-shopping .delivery {
+  text-align: center;
+}
+.delivery-shopping .delivery .icon-sh{
+  background-image: url(./images/service-icon.png) ;
+  background-repeat: no-repeat ;
+   height: 50px;
+   cursor: pointer;
+}
+.delivery .icon-6 {
+  background-position: center 7px;
+}
+.delivery .icon-6:hover {
+  background-position:  center -85px;
+  transition: ease-in-out .3s;
+}
+.delivery .icon-1 {
+  background-position: center -178px;
+}
+.delivery .icon-2 {
+  background-position: center -367px;
+}
+
+.delivery .icon-3 {
+  background-position: center -551px;
+}
+
+.delivery .icon-4 {
+  background-position: center -551px;
+}
+
+.delivery .icon-5 {
+  background-position: center -551px;
+}
+.delivery h4 {
+  font-size: x-large;
+
+  margin-top: 10px;
+}
+.delivery p{
+  margin: 0;
+  line-height: 1;
+  margin-top: -5px;
+  color: rgb(122, 122, 122);
+}
+/*faetured prodcuts*/
+.faetured-prodcuts{
+  margin: 40px;
+}
+.faetured-prodcuts h1 {
+  text-align:center;
+  font-weight: bold;
+  position: relative;
+cursor: pointer;
+}
+.faetured-prodcuts h1::before{
+  content:  " ";
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background-color: var(--maincolor);
+  top: 60px;
+  left: 451px;
+  transform: scale(1,1);
+  transition: .5s;
+}
+.faetured-prodcuts h1:hover::before{
+  transform: scale(2,2);
+  height: 1px;
+}
+ .faetured-liste {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+.faetured-liste li {
+  font-size: 20px;
+  cursor: pointer;
+}
+.markting {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.hoverphoto {
+  position: relative;
+}
+.hoverphoto .onface{
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  opacity:1 ;
+
+}
+.hoverphoto .onface img {
+  transition:  1s;
+  max-width: 95%;
+
+}
+.hoverphoto .onface img:hover  {
+  opacity:0 ;
+
+
+
+}
+
+.hoverphoto  .twoface {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  opacity: 2;
+  z-index: 0;
+  transition:  1s;
+
+
+
+}
+.hoverphoto  .twoface img {
+  max-width: 95%;
+}
